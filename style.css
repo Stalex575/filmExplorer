@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Roboto&display=swap');
 body {
+   font-family: 'Roboto', sans-serif;
    margin: 0;
    overflow-x: hidden;
 }
@@ -36,12 +37,15 @@ nav {
    height: 40px;
    transition: 0.4s;
 }
+.prompt-error {
+   box-shadow: inset 0px 0px 20px red;
+}
 #prompt::placeholder {
    font-size: 20px;
 }
 #prompt:focus {
    caret-color: #efd61a;
-   box-shadow: inset 0px 0px 10px rgb(239, 214, 26);
+   box-shadow: inset 0px 0px 20px rgb(239, 214, 26);
 }
 .search {
    width: 70%;
@@ -62,8 +66,8 @@ nav {
    padding: 15px;
    border-radius: 50px;
    background-image: linear-gradient(145deg, #ffe51c, #d7c117);
-   box-shadow:  5px 5px 18px #c9b416,
-             -5px -5px 18px #fff81e;
+   box-shadow:  5px 5px 18px #c9b416ad,
+             -5px -5px 18px #fff81e94;
    width: 100%;
    font-family: 'Roboto', sans-serif;
    box-sizing: border-box;
@@ -75,10 +79,75 @@ nav {
 
 
 #search-btn:hover {
-   color: #fff;
+   box-shadow:  5px 5px 18px #c9b416,
+             -5px -5px 18px #fff81e;
 }
 
-
-
-
-
+#loading {
+   background-color: rgba(255, 0, 0, 0);
+   align-items: center;
+   justify-content: center;
+   display: none; /* for proper work must be at 'flex' */
+ }
+ 
+ #loading div {
+   background-color: rgb(239, 214, 26);
+   width: 20px;
+   height: 20px;
+   margin: 20px;
+   border-radius: 50px;
+   animation-name: load912355;
+   animation-duration: .9s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+   text-align: center;
+   justify-content: center;
+ }
+ 
+ #loading .a {
+   animation-delay: .3s;
+ }
+ 
+ #loading .u {
+   animation-delay: .6s;
+ }
+ 
+ @keyframes load912355 {
+   0% {
+     transform: translateY(50px) scale(1);
+   }
+ 
+   100% {
+     transform: translateY(10px) scale(1.8) rotate(360deg);
+   }
+ }
+#results-title {
+   color: #fff;
+   text-align: center;
+   display: none;
+   margin-top: 10px;
+   margin-bottom: 40px;
+}
+#results {
+   justify-content: space-between;
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+}
+.movie-card {
+   margin-bottom: 10px;
+   flex: 0 1 20%;
+   display: flex;
+   flex-direction: column;
+   transition: 0.5s;
+}
+.movie-card:hover {
+   cursor: pointer;
+   transform: scale(1.1);
+}
+.movie-card img {
+   size: 100%;
+}
+.movie-card h3 {
+   color: #fff;
+}
