@@ -1,0 +1,36 @@
+@media (max-width: 1200px){
+   .wrapper {
+      padding-left: 50px;
+      padding-right: 50px;
+   }
+}
+@media (max-width: 1450px){
+   .movie-card {
+      flex: 0 1 30%;
+   }
+}
+@media (max-width: 750px){
+   .movie-card {
+      flex: 0 1 45%;
+   }
+   .modal-container {
+      flex-direction: column;
+   }
+   #poster-col {
+      justify-content: center;
+   }
+}
+@media (max-width: 550px){
+   .movie-card {
+      flex: 0 1 90%;
+   }
+   #results {
+      justify-content: center;
+   }
+   .search {
+      width: 100%;
+   }
+   #search-btn {
+      width: 100%;
+   }
+}

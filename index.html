@@ -5,31 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FilmExplorer</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
   </head>
   <body>
     <div class="wrapper">
       <nav>
-        <a href="#" class="index-link"
+        <a href="../index.html" class="index-link"
           >Film<span class="yellow">Explorer.</span></a
         >
       </nav>
       <div class="search-container">
         <div class="search">
           <input type="text" placeholder="Search movies..." id="prompt" />
-          <a id="search-btn">Search</a>
+          <a id="search-btn" class="search-btn">Search</a>
         </div>
       </div>
-      <div id="loading">
+      <div id="default-content">
+        <h1>Welcome to Film<span>Explorer</span>!</h1>
+        <p>
+          Search for any movies using the search bar above. <br />
+          <span>Anytime. Anywhere.</span>
+        </p>
+      </div>
+      <div id="results-wrapper">
+        <h2 id="results-title">Results:</h2>
+        <div id="results"></div>
+      </div>
+      <div id="loading" class="loader">
         <div class="i"></div>
         <div class="a"></div>
         <div class="u"></div>
       </div>
-      <div class="results-wrapper">
-        <h2 id="results-title">Results:</h2>
-        <div id="results"></div>
-      </div>
     </div>
-
+    <dialog id="modal">
+      <div id="exit-modal" onclick="closeModal()">&#10006;</div>
+      <div class="modal-container">
+        <div id="loading-modal" class="loader">
+          <div class="i"></div>
+          <div class="a"></div>
+          <div class="u"></div>
+        </div>
+        <div class="col" id="poster-col"></div>
+        <div class="col" id="info-col">
+          <table id="modal-table">
+            <tr>
+              <th>Title:</th>
+              <td id="movie-title-td"></td>
+            </tr>
+            <tr>
+              <th>Released:</th>
+              <td id="movie-release-td"></td>
+            </tr>
+            <tr>
+              <th>Genre:</th>
+              <td id="movie-genre-td"></td>
+            </tr>
+            <tr>
+              <th>Country:</th>
+              <td id="movie-country-td"></td>
+            </tr>
+            <tr>
+              <th>Director:</th>
+              <td id="movie-director-td"></td>
+            </tr>
+            <tr>
+              <th>Writer:</th>
+              <td id="movie-writer-td"></td>
+            </tr>
+            <tr>
+              <th>Actors:</th>
+              <td id="movie-actors-td"></td>
+            </tr>
+            <tr>
+              <th>Time:</th>
+              <td id="movie-time-td"></td>
+            </tr>
+            <tr>
+              <th>Plot:</th>
+              <td id="movie-plot-td"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>
