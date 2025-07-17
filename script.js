@@ -14,6 +14,7 @@ let promptElem;
 let totalResults;
 let remainingResults;
 let btnContainer; // container for "See more" button. It is declared here to be able to remove the button when it is not supposed to be there.
+let API_KEY = ""; // API key for OMDB API. You should replace it with your own key.
 
 class MovieService {
   // class, which provides interactions with API
@@ -22,7 +23,7 @@ class MovieService {
     try {
       loader.style.display = "flex";
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=c95a886e&s=${title}&page=${page}`
+        `http://www.omdbapi.com/?apikey=${API_KEY}&s=${title}&page=${page}`
       );
       const data = await response.json();
       totalResults = data.totalResults;
